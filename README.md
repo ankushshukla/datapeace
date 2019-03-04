@@ -1,5 +1,6 @@
 # datapeace
 
-#npm install
-#npm start
+
+#npm install <br>
+#npm start <br>
 #check on localhost:3000/
