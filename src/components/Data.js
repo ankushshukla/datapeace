@@ -85,7 +85,7 @@ class Data extends React.Component {
                             <tbody>
                             {this.state.pageOfItems.map(item =>
                             <tr >
-                           <td onClick={e=>this.onClick(e,item)}> <Link to={`/user/${item.id}`}>{item.first_name}</Link> </td>                           
+                           <td><Link to={`/user/${item.id}`}>{item.first_name}</Link> </td>                           
                             <td>{item.last_name}</td>
                             <td>{item.company_name}</td>
                             <td>{item.city}</td>
