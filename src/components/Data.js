@@ -26,6 +26,14 @@ class Data extends React.Component {
 
         this.onChangePage = this.onChangePage.bind(this);
         this.sortAscending=this.sortAscending.bind(this);
+        this.sortAscending1=this.sortAscending1.bind(this);
+        this.sortAscending2=this.sortAscending2.bind(this);
+        this.sortAscending3=this.sortAscending3.bind(this);
+        this.sortAscending4=this.sortAscending4.bind(this);
+        this.sortAscending5=this.sortAscending5.bind(this);
+        this.sortAscending6=this.sortAscending6.bind(this);
+        this.sortAscending7=this.sortAscending7.bind(this);
+        this.sortAscending8=this.sortAscending8.bind(this);
         
         
     }
