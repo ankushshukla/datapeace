@@ -16,41 +16,45 @@ const defaultProps = {
 class Pagination extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pager: {} };
+        this.state = { pager: {}};
     }
-    componentWDidMount() {
+    componentDidMount() {
+        console.log("component will mount")
         if (this.props.items && this.props.items.length) {
-            console.log("fine")
             this.setPage(this.props.initialPage);
         }
+        
+        
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps.items);
-        console.log(this.props.items)
+    componentDidUpdate(prevProps) {
+        console.log("component Did Update") 
         if (this.props.items !== prevProps.items ) {
-            console.log("hi how are you")
+            console.log("hi how are you");
+            console.log(this.props.initialPage); 
+
             this.setPage(this.props.initialPage);
         }
-    }
-    // componentWillUpdate(prevProps, prevState) {
 
-    //     if (this.props.items !== prevProps.items ) {
-    //         console.log("hi how are you")
-    //         this.setPage(this.props.initialPage);
-    //     }
-    // }
+        if(this.props.value !== prevProps.value){
+            console.log("value one")
+            this.setPage(this.props.initialPage);
+        }
+        
+    }
+
    
    
     
 
     setPage(page) {
+        console.log("setPage")
         var { items, pageSize } = this.props;
         var pager = this.state.pager;
-
-        if (page < 1 || page > pager.totalPages) {
-            return;
-        }
+        console.log(pager)
+        // if (page < 1 || page > pager.totalPages) {
+        //     console.log("yes iam")
+        //     return;
+        // }
 
         pager = this.getPager(items.length, page, pageSize);
 
@@ -105,13 +109,15 @@ class Pagination extends React.Component {
     }
 
     render() {
+    
         var pager = this.state.pager;
-
-        if (!pager.pages || pager.pages.length <= 1) {
+        {console.log("pagination")}
+        if (!pager.pages || pager.pages.length < 0) {
             return null;
         }
-
+        console.log(this.state.ankush)
         return (
+            
             <ul className="pagination">
                 <li className={pager.currentPage === 1 ? 'disabled' : ''}>
                     <a onClick={() => this.setPage(1)}>First</a>
